@@ -60,7 +60,7 @@ cd ~/git/pi_vericoinwithverium/
 #------------------------------------------------------------------#
 
 #Software install
-if [ $softwareinstall == true ]
+if $softwareinstall;
 then
     #Run update
     ./install/update.sh
@@ -70,14 +70,14 @@ then
 fi
 
 #Docker install
-if [ $dockerinstall == true ]
+if $dockerinstall;
 then
     #Runinstalldocker
     ./install/installdocker.sh
 fi
 
 #veriumminer
-if [ $veriumminerinstall == true ]
+if $veriumminerinstall;
 then
     cd veriumminer
     ./buildnewdockerimage.sh
