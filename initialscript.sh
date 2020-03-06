@@ -4,7 +4,7 @@ cd ~
 clear
 
 while true; do
-  read -p "Do you wish to install/update the needed software?" yn
+  read -p "Do you wish to install/update the needed software? " yn
     case $yn in
         [Yy]* ) softwareinstall=true; break;;
         [Nn]* ) softwareinstall=false; break;;
@@ -13,7 +13,7 @@ while true; do
 done
 
 while true; do
-  read -p "Do you wish to install docker?" yn
+  read -p "Do you wish to install docker? " yn
     case $yn in
         [Yy]* ) dockerinstall=true; break;;
         [Nn]* ) dockerinstall=false; break;;
@@ -22,7 +22,7 @@ while true; do
 done
 
 while true; do
-  read -p "Do you wish to install/update veriumminer?" yn
+  read -p "Do you wish to install/update veriumminer? " yn
     case $yn in
         [Yy]* ) veriumminerinstall=true; break;;
         [Nn]* ) veriumminerinstall=false; break;;
@@ -60,7 +60,7 @@ cd ~/git/pi_vericoinwithverium/
 #------------------------------------------------------------------#
 
 #Software install
-if [ $softwareinstall ]
+if [ $softwareinstall == true ]
 then
     #Run update
     ./install/update.sh
@@ -70,14 +70,14 @@ then
 fi
 
 #Docker install
-if [ dockerinstall ]
+if [ $dockerinstall == true ]
 then
     #Runinstalldocker
     ./install/installdocker.sh
 fi
 
 #veriumminer
-if [ veriumminerinstall ]
+if [ $veriumminerinstall == true ]
 then
     cd veriumminer
     ./buildnewdockerimage.sh
