@@ -3,6 +3,35 @@
 cd ~
 clear
 
+while true; do
+  read -p "Do you wish to install/update the needed software?" yn
+    case $yn in
+        [Yy]* ) softwareinstall=true; break;;
+        [Nn]* ) softwareinstall=false; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+  read -p "Do you wish to install docker?" yn
+    case $yn in
+        [Yy]* ) dockerinstall=true; break;;
+        [Nn]* ) dockerinstall=false; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+  read -p "Do you wish to install/update veriumminer?" yn
+    case $yn in
+        [Yy]* ) veriumminerinstall=true; break;;
+        [Nn]* ) veriumminerinstall=false; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+#------------------------------------------------------------------#
+
 #Install git
 printf "\e[32mInstall git\e[0m\n"
 sudo apt -y install git
@@ -20,23 +49,38 @@ if
 		git clone -v https://github.com/Developer-Johan/PI_VericoinWithVerium.git ~/git/pi_vericoinwithverium/
 fi
 
+#------------------------------------------------------------------#
+
 #Give all scripts righs
 sudo find ~/git/pi_vericoinwithverium/ -name '*.sh' -print0 | xargs -0 sudo chmod +x
 
 #run scripts for pi_vericoinwithverium
 cd ~/git/pi_vericoinwithverium/
 
-#Run update
-./install/update.sh
+#------------------------------------------------------------------#
 
-#Run installeprogramms
-./install/installeprogramms.sh
+#Software install
+if [ $softwareinstall ]
+then
+    #Run update
+    ./install/update.sh
 
-#Runinstalldocker
-./install/installdocker.sh
+    #Run installeprogramms
+    ./install/installeprogramms.sh
+fi
+
+#Docker install
+if [ dockerinstall ]
+then
+    #Runinstalldocker
+    ./install/installdocker.sh
+fi
 
 #veriumminer
-cd veriumminer
-./buildnewdockerimage.sh
-./runcontainer.sh
-cd ..
+if [ veriumminerinstall ]
+then
+    cd veriumminer
+    ./buildnewdockerimage.sh
+    ./runcontainer.sh
+    cd ..
+fi

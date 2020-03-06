@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 #Install needed software
 RUN apt update -y && apt upgrade -y
-RUN apt-get install -y git unzip zip wget 
+RUN apt-get install -y nano git unzip zip wget 
 RUN apt-get install -y automake autoconf pkg-config
 RUN apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev 
 

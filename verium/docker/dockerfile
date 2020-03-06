@@ -1,0 +1,13 @@
+FROM ubuntu:18.04
+
+#Install needed software
+RUN apt update -y && apt upgrade -y
+RUN apt-get install -y nano git unzip zip wget 
+RUN apt-get install -y build-essential libboost-all-dev libssl1.0-dev libdb++-dev 
+RUN apt-get install -y libminiupnpc-dev libcurl4-gnutls-dev libminizip-dev
+
+
+#Clone and build vericoin
+RUN git clone -v https://github.com/vericoin/vericoin.git ~/git/vericoin/
+RUN cd ~/git/vericoin/src/ && make -f makefile.unix
+RUN cp ~/git/vericoin/src/vericoind /usr/bin/
