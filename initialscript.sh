@@ -24,17 +24,16 @@ fi
 sudo find ~/git/pi_vericoinwithverium/ -name '*.sh' -print0 | xargs -0 sudo chmod +x
 
 #run scripts for pi_vericoinwithverium
-cd ~/git/pi_vericoinwithverium/install/
+cd ~/git/pi_vericoinwithverium/
 
 #Run update
-./update.sh
+./install/update.sh
 
 #Run installeprogramms
-./installeprogramms.sh
+./install/installeprogramms.sh
 
 #Runinstalldocker
-./installdocker.sh
-
+./install/installdocker.sh
 
 #veriumminer
 cd veriumminer
