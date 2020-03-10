@@ -30,6 +30,15 @@ while true; do
     esac
 done
 
+while true; do
+  read -p "Do you wish to install/update vericoin? " yn
+    case $yn in
+        [Yy]* ) vericoininstall=true; break;;
+        [Nn]* ) vericoininstall=false; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 #------------------------------------------------------------------#
 
 #Install git
@@ -84,3 +93,13 @@ then
     ./runcontainer.sh
     cd ..
 fi
+
+#vericoin
+if [ $veriucoininstall == true ]
+then
+    cd vericoin
+    ./buildnewdockerimage.sh
+    ./runcontainer.sh
+    cd ..
+fi
+
