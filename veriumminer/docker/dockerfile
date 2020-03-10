@@ -1,19 +1,1 @@
-FROM ubuntu:18.04
-
-#Install needed software
-RUN apt update -y && apt upgrade -y
-RUN apt-get install -y nano git unzip zip wget 
-RUN apt-get install -y automake autoconf pkg-config
-RUN apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev 
-
-#Clone and build veriumminer
-RUN git clone -v https://github.com/fireworm71/veriumMiner ~/git/veriumminer/
-RUN cd ~/git/veriumminer/ && ./build.sh
-RUN cd ~/git/veriumminer/ && ./autogen.sh
-RUN cd ~/git/veriumminer/ && ./configure CFLAGS= --with-crypto --with-curl
-RUN cd ~/git/veriumminer/ && make -j4
-RUN cp ~/git/veriumminer/cpuminer /usr/bin/
-
-#Get scripts
-RUN mkdir ~/scripts/
-RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/veriumminer/scripts/startup.sh
+FROM ubuntu:18.04#Install needed softwareRUN apt update -y && apt upgrade -yRUN apt-get install -y nano git unzip zip wget RUN apt-get install -y automake autoconf pkg-configRUN apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev #Clone and build veriumminerRUN git clone -v https://github.com/fireworm71/veriumMiner ~/git/veriumminer/RUN cd ~/git/veriumminer/ && ./build.shRUN cd ~/git/veriumminer/ && ./autogen.shRUN cd ~/git/veriumminer/ && ./configure CFLAGS= --with-crypto --with-curlRUN cd ~/git/veriumminer/ && make -j4RUN cp ~/git/veriumminer/cpuminer /usr/bin/#Get scriptsRUN mkdir ~/scripts/RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/veriumminer/scripts/startup.sh
