@@ -11,9 +11,8 @@ RUN apt-get install -y libminiupnpc-dev libcurl4-gnutls-dev libminizip-dev
 RUN git clone -v https://github.com/vericoin/vericoin.git ~/git/vericoin/
 RUN cd ~/git/vericoin/src/ && rm main.cpp
 RUN cd ~/git/vericoin/src/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/vericoin/code/main.cpp
-RUN cd ~/git/vericoin/src/ && rm mainfile.unix
-RUN cd ~/git/vericoin/src/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/vericoin/code/mainfile.unix
-RUN cd ~/git/vericoin/src/ && make -f makefile.unix
+RUN cd ~/git/vericoin/src/ && rm makefile.unix
+RUN cd ~/git/vericoin/src/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/vericoin/code/makefile.unix
 RUN cp ~/git/vericoin/src/vericoind /usr/bin/
 
 
