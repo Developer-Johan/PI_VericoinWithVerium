@@ -18,4 +18,7 @@ RUN cp ~/git/vericoin/src/vericoind /usr/bin/
 
 #Get scripts
 RUN mkdir ~/scripts/
-RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/veriumminer/scripts/startup.sh
+RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/vericoin/scripts/startup.sh
+RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/vericoin/scripts/vericoind_stake_start.sh
+RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/vericoin/scripts/vericoind_startwithoutstake.sh
+RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/vericoin/scripts/vericoind_startwithstake.sh
