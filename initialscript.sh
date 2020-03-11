@@ -95,7 +95,7 @@ then
 fi
 
 #vericoin
-if [ $veriucoininstall == true ]
+if [ $vericoininstall == true ]
 then
     cd vericoin
     ./buildnewdockerimage.sh
