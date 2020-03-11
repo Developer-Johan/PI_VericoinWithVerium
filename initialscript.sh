@@ -39,6 +39,15 @@ while true; do
     esac
 done
 
+while true; do
+  read -p "Do you wish to install/update verium? " yn
+    case $yn in
+        [Yy]* ) veriuminstall=true; break;;
+        [Nn]* ) veriuminstall=false; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
 #------------------------------------------------------------------#
 
 #Install git
@@ -98,6 +107,15 @@ fi
 if [ $vericoininstall = true ]
 then
     cd vericoin
+    ./buildnewdockerimage.sh
+    ./runcontainer.sh
+    cd ..
+fi
+
+#verium
+if [ $veriuminstall = true ]
+then
+    cd verium
     ./buildnewdockerimage.sh
     ./runcontainer.sh
     cd ..
