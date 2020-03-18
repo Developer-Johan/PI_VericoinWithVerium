@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build ./docker/ -t vericoin:latest --no-cache
+sudo docker build ./docker/ -t verium:latest --no-cache
