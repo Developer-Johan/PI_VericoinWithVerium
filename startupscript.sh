@@ -69,6 +69,7 @@ if [ $veriumminerinstall = true ]
 then
     cd veriumminer
     ./buildnewdockerimage.sh
+    ./setuproothome.sh
     ./runcontainer.sh
     cd ..
 fi
@@ -78,6 +79,7 @@ if [ $vericoininstall = true ]
 then
     cd vericoin
     ./buildnewdockerimage.sh
+    ./setuproothome.sh
     ./runcontainer.sh
     cd ..
 fi
@@ -87,6 +89,7 @@ if [ $veriuminstall = true ]
 then
     cd verium
     ./buildnewdockerimage.sh
+    ./setuproothome.sh
     ./runcontainer.sh
     cd ..
 fi
