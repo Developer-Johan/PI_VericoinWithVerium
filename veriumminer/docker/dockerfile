@@ -13,7 +13,3 @@ RUN cd ~/git/veriumminer/ && ./autogen.sh
 RUN cd ~/git/veriumminer/ && ./configure CFLAGS= --with-crypto --with-curl
 RUN cd ~/git/veriumminer/ && make -j4
 RUN cp ~/git/veriumminer/cpuminer /usr/bin/
-
-#Get scripts
-RUN mkdir ~/scripts/
-RUN cd ~/scripts/ && wget https://raw.githubusercontent.com/Developer-Johan/PI_VericoinWithVerium/master/veriumminer/scripts/startup.sh
