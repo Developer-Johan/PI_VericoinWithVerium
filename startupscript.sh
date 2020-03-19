@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "";
+echo "What do you want to install? Pleas answer the questions below.";
+
 while true; do
   read -p "Do you wish to install/update the needed software? " yn
     case $yn in
