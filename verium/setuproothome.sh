@@ -29,3 +29,4 @@ then
 		cp $filename /var/lib/docker/volumes/verium_root_home/_data/scripts/
 		sudo chmod +x $filename 
 	done
+fi
