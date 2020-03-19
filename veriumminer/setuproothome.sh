@@ -17,12 +17,13 @@ then
 		sudo chown $USER /var/lib/docker/veriumminer_root_home/_data/ -R
 	fi
 
-	printf "\e[32mCreating scripts directory\e[0m\n"
-	mkdir -p /var/lib/docker/volumes/veriumminer_root_home/_data/scripts/
+	printf "Creating scripts directory\n"
+	mkdir /var/lib/docker/volumes/veriumminer_root_home/_data/scripts/
 
-	printf "\e[32mCopy startup script\e[0m\n"
-	cp scripts/startup.sh /var/lib/docker/volumes/veriumminer_root_home/_data/scripts/
-	
-	printf "\e[32mCreating scripts directory\e[0m\n"
-	sudo chmod +x /var/lib/docker/volumes/veriumminer_root_home/_data/scripts/startup.sh
+	printf "Copy scripts\n"
+	for filename in scripts/*; do
+		printf "Copy to scripts folder: $filename\n"
+		cp $filename /var/lib/docker/volumes/veriumminer_root_home/_data/scripts/
+		sudo chmod +x $filename 
+	done
 fi
