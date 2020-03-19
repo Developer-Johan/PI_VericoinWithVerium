@@ -33,4 +33,4 @@ cd ~/git/pi_vericoinwithverium/
 
 #------------------------------------------------------------------#
 
-./startupscript.sh
+sudo ./startupscript.sh
