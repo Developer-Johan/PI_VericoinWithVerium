@@ -3,6 +3,9 @@
 cd ~
 clear
 
+#First apt update
+sudo apt update
+
 #Install git
 printf "\e[32mInstall git\e[0m\n"
 sudo apt -y install git
