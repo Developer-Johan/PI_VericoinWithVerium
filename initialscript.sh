@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cd ~
-clear
 
 #First apt update
 sudo apt update

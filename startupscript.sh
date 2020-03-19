@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "";
+clear
+
 echo "What do you want to install? Pleas answer the questions below.";
 
 while true; do
