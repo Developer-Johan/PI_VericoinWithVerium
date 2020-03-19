@@ -2,7 +2,7 @@
 
 printf "Startup\n";
 
-./vericoind_startwithoutstake.sh
+/root/scripts/vericoind_startwithoutstake.sh
 #./vericoind_startwithstake.sh
 
 printf "Finished starting\n";
