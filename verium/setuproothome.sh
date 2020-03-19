@@ -9,7 +9,7 @@ fi
 if [ ! -d "/var/lib/docker/volumes/verium_root_home/_data/" ] 
 then
 	printf "\e[32mCreating docker volume for verium\e[0m\n"
-	mkdir -p /var/lib/docker/volumes/verium_root_home/_data/.vericoin/
+	mkdir -p /var/lib/docker/volumes/verium_root_home/_data/.verium/
 
 	if [ ! -d "/var/lib/docker/volumes/verium_root_home/_data/" ] 
 	then
@@ -17,8 +17,8 @@ then
 		sudo chown $USER /var/lib/docker/verium_root_home/_data/ -R
 	fi
 
-	#printf "\e[32mGetting vericoin.conf\e[0m\n"
-	#cp data/vericoin.conf /var/lib/docker/verium_root_home/_data/.vericoin/
+	printf "\e[32mGetting verium.conf\e[0m\n"
+	cp data/verium.conf /var/lib/docker/verium_root_home/_data/.verium/
 
 	printf "Creating scripts directory\n"
 	mkdir /var/lib/docker/volumes/verium_root_home/_data/scripts/
