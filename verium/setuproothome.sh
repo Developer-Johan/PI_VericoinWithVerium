@@ -14,11 +14,11 @@ then
 	if [ ! -d "/var/lib/docker/volumes/verium_root_home/_data/" ] 
 	then
 		printf "\e[32mSetting rights right\e[0m\n"
-		sudo chown $USER /var/lib/docker/verium_root_home/_data/ -R
+		sudo chown $USER /var/lib/docker/volume/verium_root_home/_data/ -R
 	fi
 
 	printf "\e[32mGetting verium.conf\e[0m\n"
-	cp data/verium.conf /var/lib/docker/verium_root_home/_data/.verium/
+	cp data/verium.conf /var/lib/docker/volume/verium_root_home/_data/.verium/
 
 	printf "Creating scripts directory\n"
 	mkdir /var/lib/docker/volumes/verium_root_home/_data/scripts/
