@@ -26,7 +26,7 @@ then
 	printf "\e[32mGetting bootstrap.zip\e[0m\n"
 	wget https://pivericoin.blob.core.windows.net/pivericoin/bootstrap.zip -O /var/lib/docker/volumes/vericoin_root_home/_data/.vericoin/bootstrap.zip
 	printf "\e[32mUnzipping bootstrap.zip\e[0m\n"
-	unzip -q /var/lib/docker/volumes/vericoin_root_home/_data/.vericoin/bootstrap.zip
+	unzip -q /var/lib/docker/volumes/vericoin_root_home/_data/.vericoin/bootstrap.zip -d /var/lib/docker/volumes/vericoin_root_home/_data/.vericoin/
 
 	printf "\e[32mCopy content bootstrap\e[0m\n"
 	mv /var/lib/docker/volumes/vericoin_root_home/_data/.vericoin/bootstrap/* /var/lib/docker/volumes/vericoin_root_home/_data/.vericoin/
